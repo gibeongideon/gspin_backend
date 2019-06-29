@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'gspin_accounttopup_list' %}">AccountTopUp Listing</a></p>
+<table class="table">
+<tr><td>topup_amount</td><td>{{ object.topup_amount }}</td></tr>
+<tr><td>topup_time</td><td>{{ object.topup_time }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit AccountTopUp</a>
+
+{% endblock %}

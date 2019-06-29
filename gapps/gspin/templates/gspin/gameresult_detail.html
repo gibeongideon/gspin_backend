@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'gspin_gameresult_list' %}">GameResult Listing</a></p>
+<table class="table">
+<tr><td>game_results</td><td>{{ object.game_results }}</td></tr>
+<tr><td>start_time</td><td>{{ object.start_time }}</td></tr>
+<tr><td>end_time</td><td>{{ object.end_time }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit GameResult</a>
+
+{% endblock %}

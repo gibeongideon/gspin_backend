@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'gspin_gameresult_list' %}">GameResult Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>game_results</td>
+    <td>start_time</td>
+    <td>end_time</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.game_results }}</td>
+    <td>{{ object.start_time }}</td>
+    <td>{{ object.end_time }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'gspin_gameresult_create' %}">Create new GameResult</a>
+{% endblock %}

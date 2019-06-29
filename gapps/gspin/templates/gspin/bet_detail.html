@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'gspin_bet_list' %}">Bet Listing</a></p>
+<table class="table">
+<tr><td>bet_amount</td><td>{{ object.bet_amount }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>is_active</td><td>{{ object.is_active }}</td></tr>
+<tr><td>bet_choice</td><td>{{ object.bet_choice }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Bet</a>
+
+{% endblock %}
